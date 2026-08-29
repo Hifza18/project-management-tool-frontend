@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Project Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">Project Manager</div>
+
+        <div class="nav-right">
+            <span id="userName"></span>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+            <div>
+                <h1>My Projects</h1>
+                <p>Create and manage your projects.</p>
+            </div>
+
+            <button id="createProjectBtn" class="btn">
+                + Create Project
+            </button>
+        </section>
+<section class="stats-container">
+
+    <div class="stat-card">
+        <h3>Total Projects</h3>
+        <p id="totalProjects">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Total Tasks</h3>
+        <p id="totalTasks">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>To Do</h3>
+        <p id="todoCount">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>In Progress</h3>
+        <p id="progressCount">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Completed</h3>
+        <p id="completedCount">0</p>
+    </div>
+
+</section>
+        <section id="projectsContainer" class="projects-grid">
+            <!-- Projects will appear here -->
+        </section>
+
+    </main>
+
+    <!-- Create Project Modal -->
+
+    <div id="projectModal" class="modal">
+
+        <div class="modal-content">
+
+            <span id="closeModal" class="close">&times;</span>
+
+            <h2>Create Project</h2>
+
+            <form id="projectForm">
+
+                <div class="form-group">
+                    <label>Project Name</label>
+                    <input
+                        type="text"
+                        id="projectName"
+                        placeholder="Enter project name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea
+                        id="projectDescription"
+                        placeholder="Enter project description"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="btn">
+                    Create Project
+                </button>
+
+            </form>
+
+            <p id="projectMessage"></p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,365 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Project - Project Manager</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Project Manager
+        </div>
+
+
+        <div class="nav-right">
+
+            <span id="userName"></span>
+
+            <button
+                id="logoutBtn"
+                class="logout-btn">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN PROJECT AREA
+    ====================================================== -->
+
+    <main class="project-container">
+
+
+        <!-- =================================================
+             PROJECT HEADER
+        ================================================== -->
+
+        <section class="project-header">
+
+
+            <div>
+
+                <button
+                    class="back-btn"
+                    onclick="window.location.href='dashboard.html'">
+
+                    ← Back to Projects
+
+                </button>
+
+
+                <h1 id="projectTitle">
+                    Project
+                </h1>
+
+
+                <p id="projectDescription">
+                    Loading project...
+                </p>
+
+            </div>
+
+
+            <button
+                id="createTaskBtn"
+                class="btn">
+
+                + Create Task
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             TASK BOARD
+        ================================================== -->
+
+        <section class="task-board">
+
+
+            <!-- =================================================
+                 TO DO
+            ================================================== -->
+
+            <div class="task-column">
+
+                <h2>
+                    To Do
+                </h2>
+
+
+                <div
+                    id="todoTasks"
+                    class="task-list">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 IN PROGRESS
+            ================================================== -->
+
+            <div class="task-column">
+
+                <h2>
+                    In Progress
+                </h2>
+
+
+                <div
+                    id="progressTasks"
+                    class="task-list">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 COMPLETED
+            ================================================== -->
+
+            <div class="task-column">
+
+                <h2>
+                    Completed
+                </h2>
+
+
+                <div
+                    id="completedTasks"
+                    class="task-list">
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         CREATE TASK MODAL
+    ====================================================== -->
+
+    <div
+        id="taskModal"
+        class="modal">
+
+
+        <div class="modal-content">
+
+
+            <!-- CLOSE -->
+
+            <span
+                id="closeTaskModal"
+                class="close">
+
+                &times;
+
+            </span>
+
+
+
+            <h2>
+                Create Task
+            </h2>
+
+
+
+            <!-- =================================================
+                 TASK FORM
+            ================================================== -->
+
+            <form id="taskForm">
+
+
+                <!-- TASK TITLE -->
+
+                <div class="form-group">
+
+                    <label for="taskTitle">
+                        Task Title
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="taskTitle"
+                        placeholder="Enter task title"
+                        required>
+
+                </div>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="taskDescription">
+                        Description
+                    </label>
+
+
+                    <textarea
+                        id="taskDescription"
+                        placeholder="Enter task description">
+                    </textarea>
+
+                </div>
+
+
+
+                <!-- ASSIGN USER -->
+
+                <div class="form-group">
+
+                    <label for="taskAssignedTo">
+                        Assign To
+                    </label>
+
+
+                    <select
+                        id="taskAssignedTo">
+
+                        <option value="">
+                            Unassigned
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- PRIORITY -->
+
+                <div class="form-group">
+
+                    <label for="taskPriority">
+                        Priority
+                    </label>
+
+
+                    <select
+                        id="taskPriority">
+
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+
+                        <option
+                            value="Medium"
+                            selected>
+
+                            Medium
+
+                        </option>
+
+
+                        <option value="High">
+                            High
+                        </option>
+
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- DUE DATE -->
+
+                <div class="form-group">
+
+                    <label for="taskDueDate">
+                        Due Date
+                    </label>
+
+
+                    <input
+                        type="date"
+                        id="taskDueDate">
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="btn">
+
+                    Create Task
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- MESSAGE -->
+
+            <p id="taskMessage"></p>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
+```
