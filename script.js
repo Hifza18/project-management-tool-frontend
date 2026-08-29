@@ -1,4 +1,4 @@
-const API_URL = "https://project-management-tool-backend-r4uz.onrender.com/";
+const API_URL = "https://project-management-tool-backend-r4uz.onrender.com/api";
 
 // =====================================================
 // USER + TOKEN
@@ -1752,11 +1752,11 @@ async function viewComments(taskId) {
 
     try {
 
-        const token =
+        const currentToken =
             localStorage.getItem("token");
 
 
-        if (!token) {
+        if (!currentToken) {
 
             alert(
                 "Please login first."
@@ -1779,7 +1779,7 @@ async function viewComments(taskId) {
                 {
                     headers: {
                         "Authorization":
-                            `Bearer ${token}`
+                            `Bearer ${currentToken}`
                     }
                 }
             );
@@ -1860,7 +1860,7 @@ async function viewComments(taskId) {
                             "application/json",
 
                         "Authorization":
-                            `Bearer ${token}`
+                            `Bearer ${currentToken}`
                     },
 
                     body: JSON.stringify({
@@ -1929,4 +1929,3 @@ window.viewComments =
 
 window.editTask =
     editTask;
-
